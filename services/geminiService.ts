@@ -2,13 +2,13 @@
 import { GoogleGenAI, GenerateContentResponse, Type, Modality } from '@google/genai';
 import { Lead, Message, Temperature, ImageFile, MobiChatMessage, Objection } from '../types';
 
-const API_KEY = process.env.API_KEY;
+const VITE_API_KEY = process.env.VITE_API_KEY;
 
-if (!API_KEY) {
-  throw new Error("API_KEY environment variable not set");
+if (!VITE_API_KEY) {
+  throw new Error("VITE_API_KEY environment variable not set");
 }
 
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+const ai = new GoogleGenAI({ apiKey: VITE_API_KEY });
 
 const getConversationText = (conversation: Message[]): string => {
   return conversation
